@@ -4,30 +4,18 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import axios from 'axios'
 // import io from 'socket.io'
-import { io } from 'socket.io-client';
+import Room from './components/Room'
+import NewRoom from './components/NewRoom'
 
 function App() {
  
-  
-  useEffect (() => {
- 
-    const socket = io('http://localhost:3000/');
-
-    axios.get('http://localhost:3000/')
-    .then(res => {
-      console.log(res)
-    })
-    
-    socket.on('connect', () => {
-      console.log('connected')
-    })
-  }, [])
-
   return (
     <>
       <div className='border'>
         hello world
       </div>
+      <Room />
+      {/* <NewRoom props={"hi"}/> */}
     </>
   )
 }
